@@ -1,10 +1,11 @@
-<h2>Listing of all cocktails</h2>
-
 <div>
   <ul>
     <% @cocktails.each do |cocktail| %>
     <li>
-    <div><h3><%= cocktail.name %></h3></div>
+    <% if cocktail.photo? %>
+      <%= image_tag cocktail.photo.url(:bright_face) %>
+    <% end %>
+      <div><h3><%= cocktail.name %></h3></div>
     </li>
     <% end %>
   </ul>

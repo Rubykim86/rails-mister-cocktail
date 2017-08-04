@@ -3,6 +3,7 @@ class DosesController < ApplicationController
   # before_action :set_dose, only: [:destroy]
 
   def new
+    @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
   end
 
